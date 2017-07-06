@@ -1,0 +1,18 @@
+use FoodWars
+
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROC [dbo].[spGetAllFood]
+AS
+BEGIN
+
+	SELECT * FROM Food
+
+END
+GO
