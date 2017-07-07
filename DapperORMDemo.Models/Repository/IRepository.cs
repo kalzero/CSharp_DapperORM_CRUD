@@ -6,8 +6,8 @@ namespace DapperORMDemo.Models.Repository
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        void Create(T entity);
-        void Update(T entity);
+        int Create(T entity);
+        int Update(T entity);
         void Delete(T entity);       
     }
 }

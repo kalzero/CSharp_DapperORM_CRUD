@@ -1,4 +1,6 @@
 ﻿using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace DapperORMDemo.Data
 {
@@ -8,5 +10,11 @@ namespace DapperORMDemo.Data
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
+
+        public static IDbConnection ConnectionFactory(string name = "FoodWars")
+        {
+            return new SqlConnection(GetConnectionString(name));
+        }
     }
+
 }
