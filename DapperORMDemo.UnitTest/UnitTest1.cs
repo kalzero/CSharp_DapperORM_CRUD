@@ -114,12 +114,24 @@ namespace DapperORMDemo.UnitTest
             Assert.AreEqual(1, retVal);
         }
 
+        [Ignore]
         [TestMethod]
         public void Test_GetAllFoodTypes()
         {
             var foodTypes = _foodTypeRepo.GetAll();
 
             Assert.IsNotNull(foodTypes);
+        }
+
+        [TestMethod]
+        public void Test_GetFoodTypeById()
+        {
+            int id = 1;
+            FoodType ft = new FoodType();
+
+            ft = _foodTypeRepo.GetById(id);
+
+            Assert.IsNotNull(ft);
         }
 
         #endregion  

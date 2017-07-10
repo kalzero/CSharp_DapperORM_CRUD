@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DapperORMDemo.Models.Models
 {
@@ -7,5 +8,6 @@ namespace DapperORMDemo.Models.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }        
+        public DateTime DateAdded { get; set; }
     }
 }

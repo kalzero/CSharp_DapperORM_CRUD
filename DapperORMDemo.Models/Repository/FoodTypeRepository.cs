@@ -4,6 +4,7 @@ using DapperORMDemo.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace DapperORMDemo.Models.Repository
 {
@@ -32,7 +33,10 @@ namespace DapperORMDemo.Models.Repository
 
         public FoodType GetById(int id)
         {
-            throw new NotImplementedException();
+            using (IDbConnection cn = DataHelper.ConnectionFactory())
+            {
+                return cn.Query<FoodType>("spGetFoodTypeById @Id", new { Id = id }).SingleOrDefault();
+            }
         }
 
         public int Update(FoodType entity)

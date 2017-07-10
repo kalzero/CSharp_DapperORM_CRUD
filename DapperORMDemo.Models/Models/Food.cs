@@ -13,7 +13,8 @@ namespace DapperORMDemo.Models.Models
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
         [ForeignKey("FoodTypeId")]
-        public FoodType FoodType { get; set; }       
-
+        public FoodType FoodType { get; set; }     
+        public bool AllergenRisk { get; set; }
+        public string Description { get; set; }
     }
 }
